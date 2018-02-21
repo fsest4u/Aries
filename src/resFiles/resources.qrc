@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pisces.png</file>
+        <file>aries.png</file>
+    </qresource>
+</RCC>
