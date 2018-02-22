@@ -12,6 +12,8 @@
 
 #include <QMainWindow>
 
+#include "ffmpegQT/QVideoDecoder.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -28,6 +30,10 @@ private slots:
 	void on_actionOpen_triggered();
 	void on_actionExit_triggered();
 
+	void on_pushButtonNextFrame_clicked();
+	void on_pushButtonSeekMillisecond_clicked();
+	void on_pushButtonSeekFrame_clicked();
+
 private:
 
 	void ReadSetting();
@@ -35,6 +41,21 @@ private:
 
 	void InitUI();
 	void ConnectSignalsToSlots();
+
+	void changeEvent(QEvent *e);
+
+	// Helper
+
+	void image2Pixmap(QImage &img, QPixmap &pixmap);
+
+	// Decoder demo
+	void displayFrame();
+	void loadVideo(QString fileName);
+	void errLoadVideo();
+	bool checkVideoLoadOk();
+	void nextFrame();
+
+	QVideoDecoder m_Decoder;
 
 	QString		m_LastFolderOpen;
 

@@ -11,11 +11,13 @@
 #include <QtCore/QtDebug>
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
+#include <QtGui/QPainter>
 
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
 #include "misc/SettingData.h"
+#include "cio.h"
 
 static const QString SETTINGS_GROUP = "mainWindow";
 
@@ -79,13 +81,41 @@ void MainWindow::WriteSetting()
 
 void MainWindow::InitUI()
 {
-
+	//ConsoleInit();
 }
 
 void MainWindow::ConnectSignalsToSlots()
 {
 
 }
+
+void MainWindow::changeEvent(QEvent *e)
+{
+	QMainWindow::changeEvent(e);
+	switch (e->type()) {
+	case QEvent::LanguageChange:
+		ui->retranslateUi(this);
+		break;
+	default:
+		break;
+	}
+}
+
+void MainWindow::image2Pixmap(QImage &img, QPixmap &pixmap)
+{
+	// Convert the QImage to a QPixmap for display
+	pixmap = QPixmap(img.size());
+	QPainter painter;
+	painter.begin(&pixmap);
+	painter.drawImage(0, 0, img);
+	painter.end();
+}
+
+/******************************************************************************
+*******************************************************************************
+* Decoder demo   Decoder demo   Decoder demo   Decoder demo   Decoder demo
+*******************************************************************************
+******************************************************************************/
 
 void MainWindow::on_actionOpen_triggered()
 {
@@ -102,8 +132,147 @@ void MainWindow::on_actionOpen_triggered()
 		return;
 	}
 
-	if (!filename.isEmpty())
+	if (!filename.isEmpty()) {
 		m_LastFolderOpen = QFileInfo(filename).absolutePath();
+		loadVideo(filename);
+	}
+
+}
+
+/**
+Prompts the user for the video to load, and display the first frame
+**/
+void MainWindow::loadVideo(QString fileName)
+{
+	m_Decoder.openFile(fileName);
+	if (m_Decoder.isOk() == false)
+	{
+		QMessageBox::critical(this, "Error", "Error loading the video");
+		return;
+	}
+
+	// Get a new frame
+	nextFrame();
+	// Display a frame
+	displayFrame();
+
+}
+
+void MainWindow::errLoadVideo()
+{
+	QMessageBox::critical(this, "Error", "Load a video first");
+}
+bool MainWindow::checkVideoLoadOk()
+{
+	if (m_Decoder.isOk() == false)
+	{
+		errLoadVideo();
+		return false;
+	}
+	return true;
+}
+
+/**
+Decode and display a frame
+**/
+void MainWindow::displayFrame()
+{
+	// Check we've loaded a video successfully
+	if (!checkVideoLoadOk())
+		return;
+
+	QImage img;
+
+	// Decode a frame
+	int et, en;
+	if (!m_Decoder.getFrame(img, &en, &et))
+	{
+		QMessageBox::critical(this, "Error", "Error decoding the frame");
+		return;
+	}
+	// Convert the QImage to a QPixmap for display
+
+	QPixmap p;
+	image2Pixmap(img, p);
+	// Display the QPixmap
+	ui->labelVideoFrame->setPixmap(p);
+
+	// Display the video size
+	ui->labelVideoInfo->setText(QString("Size %2 ms. Display: #%3 @ %4 ms.").arg(m_Decoder.getVideoLengthMs()).arg(en).arg(et));
+
+}
+
+void MainWindow::nextFrame()
+{
+	if (!m_Decoder.seekNextFrame())
+	{
+		QMessageBox::critical(this, "Error", "seekNextFrame failed");
+	}
+}
+
+/**
+Display next frame
+**/
+void MainWindow::on_pushButtonNextFrame_clicked()
+{
+	nextFrame();
+	displayFrame();
+}
+
+
+
+
+void MainWindow::on_pushButtonSeekFrame_clicked()
+{
+	// Check we've loaded a video successfully
+	if (!checkVideoLoadOk())
+		return;
+
+	bool ok;
+
+	int frame = ui->lineEditFrame->text().toInt(&ok);
+	if (!ok || frame < 0)
+	{
+		QMessageBox::critical(this, "Error", "Invalid frame number");
+		return;
+	}
+
+	// Seek to the desired frame
+	if (!m_Decoder.seekFrame(frame))
+	{
+		QMessageBox::critical(this, "Error", "Seek failed");
+		return;
+	}
+	// Display the frame
+	displayFrame();
+
+}
+
+
+void MainWindow::on_pushButtonSeekMillisecond_clicked()
+{
+	// Check we've loaded a video successfully
+	if (!checkVideoLoadOk())
+		return;
+
+	bool ok;
+
+	int ms = ui->lineEditMillisecond->text().toInt(&ok);
+	if (!ok || ms < 0)
+	{
+		QMessageBox::critical(this, "Error", "Invalid time");
+		return;
+	}
+
+	// Seek to the desired frame
+	if (!m_Decoder.seekMs(ms))
+	{
+		QMessageBox::critical(this, "Error", "Seek failed");
+		return;
+	}
+	// Display the frame
+	displayFrame();
+
 
 }
 
