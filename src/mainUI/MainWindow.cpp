@@ -19,6 +19,13 @@
 
 static const QString SETTINGS_GROUP = "mainWindow";
 
+const QStringList AUDIO_EXTENSIONS = QStringList() << "aac" << "m4a" << "mp3" << "mpeg" << "mpg" << "oga" << "ogg";
+const QStringList VIDEO_EXTENSIONS = QStringList() << "m4v" << "mp4" << "mov" << "ogv" << "webm" << "vtt" << "ttml";
+
+const QString AUDIO_EXTENSION = "Audio Files (*.aac *.m4a *.mp3 *.mpeg *.mpg *.oga *.ogg)";
+const QString VIDEO_EXTENSION = "Video Files (*.m4v *.mp4 *.mov *.ogv *.webm *.vtt *.ttml)";
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 	, ui(new Ui::MainWindow)
@@ -88,12 +95,15 @@ void MainWindow::on_actionOpen_triggered()
 		m_LastFolderOpen = QDir::homePath();
 	}
 
-	QString dirName = QFileDialog::getExistingDirectory(this, tr("Open Epub Directory"), m_LastFolderOpen, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-	if (dirName.isEmpty()) {
-		QMessageBox::warning(this, tr("Open Epub Directory"), tr("Please select a directory to open."));
+	QString default_filter = "*";
+	QString filename = QFileDialog::getOpenFileName(this, tr("Open Video File"), m_LastFolderOpen, VIDEO_EXTENSION);
+	if (filename.isEmpty()) {
+		QMessageBox::warning(this, tr("Open Video File"), tr("Please select a video file to open."));
 		return;
 	}
-	m_LastFolderOpen = dirName;
+
+	if (!filename.isEmpty())
+		m_LastFolderOpen = QFileInfo(filename).absolutePath();
 
 }
 
