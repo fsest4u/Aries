@@ -1,0 +1,9 @@
+
+[ffmpeg old release]
+https://www.ffmpeg.org/
+
+[ffmpeg pre-build]
+https://ffmpeg.zeranoe.com/builds/
+
+[google code - qtffmpegwrapper]
+https://code.google.com/archive/p/qtffmpegwrapper/downloads
