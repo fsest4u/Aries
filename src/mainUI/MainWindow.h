@@ -12,7 +12,7 @@
 
 #include <QMainWindow>
 
-#include "ffmpegQT/QVideoDecoder.h"
+#include "ffmpegQT341/QVideoDecoder.h"
 
 namespace Ui {
 class MainWindow;

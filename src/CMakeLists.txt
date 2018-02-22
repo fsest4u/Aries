@@ -33,62 +33,146 @@ set( MISC_FILES
     misc/SettingData.cpp
 )
 
-set( FFMPEG_FILES
-    ffmpeg/include/libavcodec/avcodec.h
-    ffmpeg/include/libavcodec/avfft.h
-    ffmpeg/include/libavcodec/dxva2.h
-    ffmpeg/include/libavcodec/opt.h
-    ffmpeg/include/libavcodec/vaapi.h
-    ffmpeg/include/libavcodec/vdpau.h
-    ffmpeg/include/libavcodec/version.h
-    ffmpeg/include/libavcodec/xvmc.h
-    ffmpeg/include/libavdevice/avdevice.h
-    ffmpeg/include/libavformat/avformat.h
-    ffmpeg/include/libavformat/avio.h
-    ffmpeg/include/libavformat/version.h
-    ffmpeg/include/libavutil/adler32.h
-    ffmpeg/include/libavutil/aes.h
-    ffmpeg/include/libavutil/attributes.h
-    ffmpeg/include/libavutil/audioconvert.h
-    ffmpeg/include/libavutil/avassert.h
-    ffmpeg/include/libavutil/avconfig.h
-    ffmpeg/include/libavutil/avstring.h
-    ffmpeg/include/libavutil/avutil.h
-    ffmpeg/include/libavutil/base64.h
-    ffmpeg/include/libavutil/bswap.h
-    ffmpeg/include/libavutil/common.h
-    ffmpeg/include/libavutil/cpu.h
-    ffmpeg/include/libavutil/crc.h
-    ffmpeg/include/libavutil/dict.h
-    ffmpeg/include/libavutil/error.h
-    ffmpeg/include/libavutil/fifo.h
-    ffmpeg/include/libavutil/file.h
-    ffmpeg/include/libavutil/imgutils.h
-    ffmpeg/include/libavutil/intfloat_readwrite.h
-    ffmpeg/include/libavutil/intreadwrite.h
-    ffmpeg/include/libavutil/lfg.h
-    ffmpeg/include/libavutil/log.h
-    ffmpeg/include/libavutil/lzo.h
-    ffmpeg/include/libavutil/mathematics.h
-    ffmpeg/include/libavutil/md5.h
-    ffmpeg/include/libavutil/mem.h
-    ffmpeg/include/libavutil/opt.h
-    ffmpeg/include/libavutil/parseutils.h
-    ffmpeg/include/libavutil/pixdesc.h
-    ffmpeg/include/libavutil/pixfmt.h
-    ffmpeg/include/libavutil/random_seed.h
-    ffmpeg/include/libavutil/rational.h
-    ffmpeg/include/libavutil/samplefmt.h
-    ffmpeg/include/libavutil/sha.h   
-    ffmpeg/include/libswscale/swscale.h
+set( FFMPEG_AVCODEC_FILES
+    ffmpeg341/include/libavcodec/avcodec.h
+    ffmpeg341/include/libavcodec/avdct.h
+    ffmpeg341/include/libavcodec/avfft.h
+    ffmpeg341/include/libavcodec/d3d11va.h
+    ffmpeg341/include/libavcodec/dirac.h
+    ffmpeg341/include/libavcodec/dv_profile.h
+    ffmpeg341/include/libavcodec/dxva2.h
+    ffmpeg341/include/libavcodec/jni.h
+    ffmpeg341/include/libavcodec/mediacodec.h
+    ffmpeg341/include/libavcodec/qsv.h
+    ffmpeg341/include/libavcodec/vaapi.h
+    ffmpeg341/include/libavcodec/vda.h
+    ffmpeg341/include/libavcodec/vdpau.h
+    ffmpeg341/include/libavcodec/version.h
+    ffmpeg341/include/libavcodec/videotoolbox.h
+    ffmpeg341/include/libavcodec/vorbis_parser.h
+    ffmpeg341/include/libavcodec/xvmc.h    
+)
+
+set( FFMPEG_AVDEVICE_FILES
+    ffmpeg341/include/libavdevice/avdevice.h
+    ffmpeg341/include/libavdevice/version.h
+)
+
+set( FFMPEG_AVFILTER_FILES
+    ffmpeg341/include/libavfilter/avfilter.h
+    ffmpeg341/include/libavfilter/avfiltergraph.h
+    ffmpeg341/include/libavfilter/buffersink.h
+    ffmpeg341/include/libavfilter/buffersrc.h
+    ffmpeg341/include/libavfilter/version.h    
+)
+
+set( FFMPEG_AVFORMAT_FILES
+    ffmpeg341/include/libavformat/avformat.h
+    ffmpeg341/include/libavformat/avio.h
+    ffmpeg341/include/libavformat/version.h
+)
+
+set( FFMPEG_AVUTIL_FILES
+    ffmpeg341/include/libavutil/adler32.h
+    ffmpeg341/include/libavutil/aes.h
+    ffmpeg341/include/libavutil/aes_ctr.h
+    ffmpeg341/include/libavutil/attributes.h
+    ffmpeg341/include/libavutil/audio_fifo.h
+    ffmpeg341/include/libavutil/avassert.h
+    ffmpeg341/include/libavutil/avconfig.h
+    ffmpeg341/include/libavutil/avstring.h
+    ffmpeg341/include/libavutil/avutil.h
+    ffmpeg341/include/libavutil/base64.h
+    ffmpeg341/include/libavutil/blowfish.h
+    ffmpeg341/include/libavutil/bprint.h
+    ffmpeg341/include/libavutil/bswap.h
+    ffmpeg341/include/libavutil/buffer.h
+    ffmpeg341/include/libavutil/camellia.h
+    ffmpeg341/include/libavutil/cast5.h
+    ffmpeg341/include/libavutil/channel_layout.h
+    ffmpeg341/include/libavutil/common.h
+    ffmpeg341/include/libavutil/cpu.h
+    ffmpeg341/include/libavutil/crc.h
+    ffmpeg341/include/libavutil/des.h
+    ffmpeg341/include/libavutil/dict.h
+    ffmpeg341/include/libavutil/display.h
+    ffmpeg341/include/libavutil/downmix_info.h
+    ffmpeg341/include/libavutil/error.h
+    ffmpeg341/include/libavutil/eval.h
+    ffmpeg341/include/libavutil/ffversion.h
+    ffmpeg341/include/libavutil/fifo.h
+    ffmpeg341/include/libavutil/file.h
+    ffmpeg341/include/libavutil/frame.h
+    ffmpeg341/include/libavutil/hash.h
+    ffmpeg341/include/libavutil/hmac.h
+    ffmpeg341/include/libavutil/hwcontext.h
+    ffmpeg341/include/libavutil/hwcontext_cuda.h
+    ffmpeg341/include/libavutil/hwcontext_d3d11va.h
+    ffmpeg341/include/libavutil/hwcontext_drm.h
+    ffmpeg341/include/libavutil/hwcontext_dxva2.h
+    ffmpeg341/include/libavutil/hwcontext_qsv.h
+    ffmpeg341/include/libavutil/hwcontext_vaapi.h
+    ffmpeg341/include/libavutil/hwcontext_vdpau.h
+    ffmpeg341/include/libavutil/hwcontext_videotoolbox.h
+    ffmpeg341/include/libavutil/imgutils.h
+    ffmpeg341/include/libavutil/intfloat.h
+    ffmpeg341/include/libavutil/intreadwrite.h
+    ffmpeg341/include/libavutil/lfg.h
+    ffmpeg341/include/libavutil/log.h
+    ffmpeg341/include/libavutil/lzo.h
+    ffmpeg341/include/libavutil/macros.h
+    ffmpeg341/include/libavutil/mastering_display_metadata.h
+    ffmpeg341/include/libavutil/mathematics.h
+    ffmpeg341/include/libavutil/md5.h
+    ffmpeg341/include/libavutil/mem.h
+    ffmpeg341/include/libavutil/motion_vector.h
+    ffmpeg341/include/libavutil/murmur3.h
+    ffmpeg341/include/libavutil/opt.h
+    ffmpeg341/include/libavutil/parseutils.h
+    ffmpeg341/include/libavutil/pixdesc.h
+    ffmpeg341/include/libavutil/pixelutils.h
+    ffmpeg341/include/libavutil/pixfmt.h
+    ffmpeg341/include/libavutil/random_seed.h
+    ffmpeg341/include/libavutil/rational.h
+    ffmpeg341/include/libavutil/rc4.h
+    ffmpeg341/include/libavutil/replaygain.h
+    ffmpeg341/include/libavutil/ripemd.h
+    ffmpeg341/include/libavutil/samplefmt.h
+    ffmpeg341/include/libavutil/sha.h
+    ffmpeg341/include/libavutil/sha512.h
+    ffmpeg341/include/libavutil/spherical.h
+    ffmpeg341/include/libavutil/stereo3d.h
+    ffmpeg341/include/libavutil/tea.h
+    ffmpeg341/include/libavutil/threadmessage.h
+    ffmpeg341/include/libavutil/time.h
+    ffmpeg341/include/libavutil/timecode.h
+    ffmpeg341/include/libavutil/timestamp.h
+    ffmpeg341/include/libavutil/tree.h
+    ffmpeg341/include/libavutil/twofish.h
+    ffmpeg341/include/libavutil/version.h
+    ffmpeg341/include/libavutil/xtea.h
+)
+
+set( FFMPEG_POSTPROC_FILES
+    ffmpeg341/include/libpostproc/postprocess.h
+    ffmpeg341/include/libavutil/version.h
+)
+
+set( FFMPEG_SWRESAMPLE_FILES
+    ffmpeg341/include/libswresample/swresample.h
+    ffmpeg341/include/libswresample/version.h
+)
+
+set( FFMPEG_SWSCALE_FILES
+    ffmpeg341/include/libswscale/swscale.h
+    ffmpeg341/include/libswscale/version.h
 )
 
 set ( FFMPEGQT_FILES
-    ffmpegQT/ffmpeg.h
-    ffmpegQT/QVideoDecoder.h
-    ffmpegQT/QVideoDecoder.cpp
-    ffmpegQT/QVideoEncoder.h
-    ffmpegQT/QVideoEncoder.cpp)
+    ffmpegQT341/ffmpeg.h
+    ffmpegQT341/QVideoDecoder.h
+    ffmpegQT341/QVideoDecoder.cpp
+)
 
 set( UI_FILES
 	formFiles/MainWindow.ui
@@ -98,18 +182,21 @@ set( QRC_FILES
 	resFiles/resources.qrc
 )
 
-set( RAW_SOURCES ${MAIN_FILES} ${MAINUI_FILES} ${MISC_FILES} ${FFMPEG_FILES} ${FFMPEGQT_FILES})
+set( RAW_SOURCES ${MAIN_FILES} ${MAINUI_FILES} ${MISC_FILES} ${FFMPEG_AVCODEC_FILES} ${FFMPEG_AVDEVICE_FILES} ${FFMPEG_AVFILTER_FILES} ${FFMPEG_AVFORMAT_FILES} ${FFMPEG_AVUTIL_FILES} ${FFMPEG_POSTPROC_FILES} ${FFMPEG_SWRESAMPLE_FILES} ${FFMPEG_SWSCALE_FILES} ${FFMPEGQT_FILES})
 
 set( FFMEPG_INCLUDE_FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/include
 )
 
 set ( FFMPEG_LIB_FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/lib/avcodec.lib
-    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/lib/avdevice.lib
-    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/lib/avformat.lib
-    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/lib/avutil.lib
-    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/lib/swscale.lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/avcodec.lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/avdevice.lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/avfilter.lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/avformat.lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/avutil.lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/postproc.lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/swresample.lib    
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/swscale.lib
 )
 
 #########################################################
@@ -134,7 +221,14 @@ source_group( "Resource Files"          FILES ${QRC_FILES} )
 source_group( "Misc"                    FILES ${MISC_FILES} )
 source_group( "Main UI"                 FILES ${MAINUI_FILES} )
 source_group( "Main Files"              FILES ${MAIN_FILES} )
-source_group( "FFMpeg Files"            FILES ${FFMPEG_FILES} )
+source_group( "FFMpeg AVCodec Files"    FILES ${FFMPEG_AVCODEC_FILES} )
+source_group( "FFMpeg AVDevice Files"   FILES ${FFMPEG_AVDEVICE_FILES} )
+source_group( "FFMpeg AVFilter Files"   FILES ${FFMPEG_AVFILTER_FILES} )
+source_group( "FFMpeg AVFormat Files"   FILES ${FFMPEG_AVFORMAT_FILES} )
+source_group( "FFMpeg AVUtil Files"     FILES ${FFMPEG_AVUTIL_FILES} )
+source_group( "FFMpeg Postproc Files"   FILES ${FFMPEG_POSTPROC_FILES} )
+source_group( "FFMpeg SWRESample Files" FILES ${FFMPEG_SWRESAMPLE_FILES} )
+source_group( "FFMpeg SWScale Files"    FILES ${FFMPEG_SWSCALE_FILES} )
 source_group( "FFMpegQT Files"          FILES ${FFMPEGQT_FILES} )
 
 #########################################################

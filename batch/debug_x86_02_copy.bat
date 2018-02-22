@@ -8,11 +8,12 @@ rem -----------------------------------------------------
 rem Copy Utility for Execute
 rem -----------------------------------------------------
 rem xcopy ..\reader\* 					..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug\reader\* /e /h /k
-copy ..\src\ffmpeg\lib\avcodec-53.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
-copy ..\src\ffmpeg\lib\avdevice-53.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
-copy ..\src\ffmpeg\lib\avfilter-2.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
-copy ..\src\ffmpeg\lib\avformat-53.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
-copy ..\src\ffmpeg\lib\avutil-51.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
-copy ..\src\ffmpeg\lib\postproc-51.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
-copy ..\src\ffmpeg\lib\swscale-2.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
+copy ..\src\ffmpeg341\bin\avcodec-57.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
+copy ..\src\ffmpeg341\bin\avdevice-57.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
+copy ..\src\ffmpeg341\bin\avfilter-6.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
+copy ..\src\ffmpeg341\bin\avformat-57.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
+copy ..\src\ffmpeg341\bin\avutil-55.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
+copy ..\src\ffmpeg341\bin\postproc-54.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
+copy ..\src\ffmpeg341\bin\swresample-2.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
+copy ..\src\ffmpeg341\bin\swscale-4.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
 

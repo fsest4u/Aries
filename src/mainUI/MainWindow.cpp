@@ -145,11 +145,11 @@ Prompts the user for the video to load, and display the first frame
 void MainWindow::loadVideo(QString fileName)
 {
 	m_Decoder.openFile(fileName);
-	if (m_Decoder.isOk() == false)
-	{
-		QMessageBox::critical(this, "Error", "Error loading the video");
-		return;
-	}
+	//if (m_Decoder.isOk() == false)
+	//{
+	//	QMessageBox::critical(this, "Error", "Error loading the video");
+	//	return;
+	//}
 
 	// Get a new frame
 	nextFrame();
@@ -164,11 +164,11 @@ void MainWindow::errLoadVideo()
 }
 bool MainWindow::checkVideoLoadOk()
 {
-	if (m_Decoder.isOk() == false)
-	{
-		errLoadVideo();
-		return false;
-	}
+	//if (m_Decoder.isOk() == false)
+	//{
+	//	errLoadVideo();
+	//	return false;
+	//}
 	return true;
 }
 
@@ -177,37 +177,37 @@ Decode and display a frame
 **/
 void MainWindow::displayFrame()
 {
-	// Check we've loaded a video successfully
-	if (!checkVideoLoadOk())
-		return;
+	//// Check we've loaded a video successfully
+	//if (!checkVideoLoadOk())
+	//	return;
 
-	QImage img;
+	//QImage img;
 
-	// Decode a frame
-	int et, en;
-	if (!m_Decoder.getFrame(img, &en, &et))
-	{
-		QMessageBox::critical(this, "Error", "Error decoding the frame");
-		return;
-	}
-	// Convert the QImage to a QPixmap for display
+	//// Decode a frame
+	//int et, en;
+	//if (!m_Decoder.getFrame(img, &en, &et))
+	//{
+	//	QMessageBox::critical(this, "Error", "Error decoding the frame");
+	//	return;
+	//}
+	//// Convert the QImage to a QPixmap for display
 
-	QPixmap p;
-	image2Pixmap(img, p);
-	// Display the QPixmap
-	ui->labelVideoFrame->setPixmap(p);
+	//QPixmap p;
+	//image2Pixmap(img, p);
+	//// Display the QPixmap
+	//ui->labelVideoFrame->setPixmap(p);
 
-	// Display the video size
-	ui->labelVideoInfo->setText(QString("Size %2 ms. Display: #%3 @ %4 ms.").arg(m_Decoder.getVideoLengthMs()).arg(en).arg(et));
+	//// Display the video size
+	//ui->labelVideoInfo->setText(QString("Size %2 ms. Display: #%3 @ %4 ms.").arg(m_Decoder.getVideoLengthMs()).arg(en).arg(et));
 
 }
 
 void MainWindow::nextFrame()
 {
-	if (!m_Decoder.seekNextFrame())
-	{
-		QMessageBox::critical(this, "Error", "seekNextFrame failed");
-	}
+	//if (!m_Decoder.seekNextFrame())
+	//{
+	//	QMessageBox::critical(this, "Error", "seekNextFrame failed");
+	//}
 }
 
 /**
@@ -224,54 +224,54 @@ void MainWindow::on_pushButtonNextFrame_clicked()
 
 void MainWindow::on_pushButtonSeekFrame_clicked()
 {
-	// Check we've loaded a video successfully
-	if (!checkVideoLoadOk())
-		return;
+	//// Check we've loaded a video successfully
+	//if (!checkVideoLoadOk())
+	//	return;
 
-	bool ok;
+	//bool ok;
 
-	int frame = ui->lineEditFrame->text().toInt(&ok);
-	if (!ok || frame < 0)
-	{
-		QMessageBox::critical(this, "Error", "Invalid frame number");
-		return;
-	}
+	//int frame = ui->lineEditFrame->text().toInt(&ok);
+	//if (!ok || frame < 0)
+	//{
+	//	QMessageBox::critical(this, "Error", "Invalid frame number");
+	//	return;
+	//}
 
-	// Seek to the desired frame
-	if (!m_Decoder.seekFrame(frame))
-	{
-		QMessageBox::critical(this, "Error", "Seek failed");
-		return;
-	}
-	// Display the frame
-	displayFrame();
+	//// Seek to the desired frame
+	//if (!m_Decoder.seekFrame(frame))
+	//{
+	//	QMessageBox::critical(this, "Error", "Seek failed");
+	//	return;
+	//}
+	//// Display the frame
+	//displayFrame();
 
 }
 
 
 void MainWindow::on_pushButtonSeekMillisecond_clicked()
 {
-	// Check we've loaded a video successfully
-	if (!checkVideoLoadOk())
-		return;
+	//// Check we've loaded a video successfully
+	//if (!checkVideoLoadOk())
+	//	return;
 
-	bool ok;
+	//bool ok;
 
-	int ms = ui->lineEditMillisecond->text().toInt(&ok);
-	if (!ok || ms < 0)
-	{
-		QMessageBox::critical(this, "Error", "Invalid time");
-		return;
-	}
+	//int ms = ui->lineEditMillisecond->text().toInt(&ok);
+	//if (!ok || ms < 0)
+	//{
+	//	QMessageBox::critical(this, "Error", "Invalid time");
+	//	return;
+	//}
 
-	// Seek to the desired frame
-	if (!m_Decoder.seekMs(ms))
-	{
-		QMessageBox::critical(this, "Error", "Seek failed");
-		return;
-	}
-	// Display the frame
-	displayFrame();
+	//// Seek to the desired frame
+	//if (!m_Decoder.seekMs(ms))
+	//{
+	//	QMessageBox::critical(this, "Error", "Seek failed");
+	//	return;
+	//}
+	//// Display the frame
+	//displayFrame();
 
 
 }
