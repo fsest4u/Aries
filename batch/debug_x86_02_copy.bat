@@ -16,4 +16,5 @@ copy ..\src\ffmpeg341\bin\avutil-55.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Deb
 copy ..\src\ffmpeg341\bin\postproc-54.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
 copy ..\src\ffmpeg341\bin\swresample-2.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
 copy ..\src\ffmpeg341\bin\swscale-4.dll 		..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
+copy ..\src\SDL207\bin\SDL2.dll 				..\..\Aries-Desktop-MSVC2013-32bit-Debug\bin\Debug
 

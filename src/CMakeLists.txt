@@ -168,10 +168,95 @@ set( FFMPEG_SWSCALE_FILES
     ffmpeg341/include/libswscale/version.h
 )
 
-set ( FFMPEGQT_FILES
+set( FFMPEGQT_FILES
     ffmpegQT341/ffmpeg.h
     ffmpegQT341/QVideoDecoder.h
     ffmpegQT341/QVideoDecoder.cpp
+)
+
+set( SDL2_FILES
+    SDL207/include/begin_code.h
+    SDL207/include/close_code.h
+    SDL207/include/SDL.h
+    SDL207/include/SDL_assert.h
+    SDL207/include/SDL_atomic.h
+    SDL207/include/SDL_audio.h
+    SDL207/include/SDL_bits.h
+    SDL207/include/SDL_blendmode.h
+    SDL207/include/SDL_clipboard.h
+    SDL207/include/SDL_config.h
+    SDL207/include/SDL_config_android.h
+    SDL207/include/SDL_config_iphoneos.h
+    SDL207/include/SDL_config_macosx.h
+    SDL207/include/SDL_config_minimal.h
+    SDL207/include/SDL_config_pandora.h
+    SDL207/include/SDL_config_psp.h
+    SDL207/include/SDL_config_windows.h
+    SDL207/include/SDL_config_winrt.h
+    SDL207/include/SDL_config_wiz.h
+    SDL207/include/SDL_copying.h
+    SDL207/include/SDL_cpuinfo.h
+    SDL207/include/SDL_egl.h
+    SDL207/include/SDL_endian.h
+    SDL207/include/SDL_error.h
+    SDL207/include/SDL_events.h
+    SDL207/include/SDL_filesystem.h
+    SDL207/include/SDL_gamecontroller.h
+    SDL207/include/SDL_gesture.h
+    SDL207/include/SDL_haptic.h
+    SDL207/include/SDL_hints.h
+    SDL207/include/SDL_joystick.h
+    SDL207/include/SDL_keyboard.h
+    SDL207/include/SDL_keycode.h
+    SDL207/include/SDL_loadso.h
+    SDL207/include/SDL_log.h
+    SDL207/include/SDL_main.h
+    SDL207/include/SDL_messagebox.h
+    SDL207/include/SDL_mouse.h
+    SDL207/include/SDL_mutex.h
+    SDL207/include/SDL_name.h
+    SDL207/include/SDL_opengl.h
+    SDL207/include/SDL_opengles.h
+    SDL207/include/SDL_opengles2.h
+    SDL207/include/SDL_opengles2_gl2.h
+    SDL207/include/SDL_opengles2_gl2ext.h
+    SDL207/include/SDL_opengles2_gl2platform.h
+    SDL207/include/SDL_opengles2_khrplatform.h
+    SDL207/include/SDL_opengl_glext.h
+    SDL207/include/SDL_pixels.h
+    SDL207/include/SDL_platform.h
+    SDL207/include/SDL_power.h
+    SDL207/include/SDL_quit.h
+    SDL207/include/SDL_rect.h
+    SDL207/include/SDL_render.h
+    SDL207/include/SDL_revision.h
+    SDL207/include/SDL_rwops.h
+    SDL207/include/SDL_scancode.h
+    SDL207/include/SDL_shape.h
+    SDL207/include/SDL_stdinc.h
+    SDL207/include/SDL_surface.h
+    SDL207/include/SDL_system.h
+    SDL207/include/SDL_syswm.h
+    SDL207/include/SDL_test.h
+    SDL207/include/SDL_test_assert.h
+    SDL207/include/SDL_test_common.h
+    SDL207/include/SDL_test_compare.h
+    SDL207/include/SDL_test_crc32.h
+    SDL207/include/SDL_test_font.h
+    SDL207/include/SDL_test_fuzzer.h
+    SDL207/include/SDL_test_harness.h
+    SDL207/include/SDL_test_images.h
+    SDL207/include/SDL_test_log.h
+    SDL207/include/SDL_test_md5.h
+    SDL207/include/SDL_test_memory.h
+    SDL207/include/SDL_test_random.h
+    SDL207/include/SDL_thread.h
+    SDL207/include/SDL_timer.h
+    SDL207/include/SDL_touch.h
+    SDL207/include/SDL_types.h
+    SDL207/include/SDL_version.h
+    SDL207/include/SDL_video.h
+    SDL207/include/SDL_vulkan.h
 )
 
 set( UI_FILES
@@ -182,13 +267,13 @@ set( QRC_FILES
 	resFiles/resources.qrc
 )
 
-set( RAW_SOURCES ${MAIN_FILES} ${MAINUI_FILES} ${MISC_FILES} ${FFMPEG_AVCODEC_FILES} ${FFMPEG_AVDEVICE_FILES} ${FFMPEG_AVFILTER_FILES} ${FFMPEG_AVFORMAT_FILES} ${FFMPEG_AVUTIL_FILES} ${FFMPEG_POSTPROC_FILES} ${FFMPEG_SWRESAMPLE_FILES} ${FFMPEG_SWSCALE_FILES} ${FFMPEGQT_FILES})
+set( RAW_SOURCES ${MAIN_FILES} ${MAINUI_FILES} ${MISC_FILES} ${FFMPEG_AVCODEC_FILES} ${FFMPEG_AVDEVICE_FILES} ${FFMPEG_AVFILTER_FILES} ${FFMPEG_AVFORMAT_FILES} ${FFMPEG_AVUTIL_FILES} ${FFMPEG_POSTPROC_FILES} ${FFMPEG_SWRESAMPLE_FILES} ${FFMPEG_SWSCALE_FILES} ${FFMPEGQT_FILES} ${SDL2_FILES} )
 
 set( FFMEPG_INCLUDE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/include
 )
 
-set ( FFMPEG_LIB_FILES
+set( FFMPEG_LIB_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/avcodec.lib
     ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/avdevice.lib
     ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/avfilter.lib
@@ -197,6 +282,14 @@ set ( FFMPEG_LIB_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/postproc.lib
     ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/swresample.lib    
     ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg341/lib/swscale.lib
+)
+
+set( SDL2_INCLUDE_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/SDL207/include
+)
+
+set( SDL2_LIB_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/SDL207/lib/SDL2.lib
 )
 
 #########################################################
@@ -230,6 +323,7 @@ source_group( "FFMpeg Postproc Files"   FILES ${FFMPEG_POSTPROC_FILES} )
 source_group( "FFMpeg SWRESample Files" FILES ${FFMPEG_SWRESAMPLE_FILES} )
 source_group( "FFMpeg SWScale Files"    FILES ${FFMPEG_SWSCALE_FILES} )
 source_group( "FFMpegQT Files"          FILES ${FFMPEGQT_FILES} )
+source_group( "SDL2 Files"              FILES ${SDL2_FILES} )
 
 #########################################################
 
@@ -244,7 +338,8 @@ set( ALL_SOURCES ${RAW_SOURCES} ${UI_FILES_H} ${QRC_FILES_CPP} ${QM_FILES} )
 include_directories( BEFORE
                      ${CMAKE_CURRENT_SOURCE_DIR}
                      ${CMAKE_CURRENT_BINARY_DIR}
-                     ${FFMEPG_INCLUDE_FILES} )
+                     ${FFMEPG_INCLUDE_FILES}
+                     ${SDL2_INCLUDE_FILES} )
 
 #########################################################
 
@@ -254,7 +349,7 @@ if (MSVC)
     set(QT_MAIN Qt5::WinMain)
 endif()
 
-target_link_libraries( ${PROJECT_NAME} ${QT_MAIN} ${FFMPEG_LIB_FILES} )
+target_link_libraries( ${PROJECT_NAME} ${QT_MAIN} ${FFMPEG_LIB_FILES} ${SDL2_LIB_FILES} )
 qt5_use_modules(${PROJECT_NAME} Widgets Xml XmlPatterns PrintSupport Svg WebKit WebKitWidgets Network Concurrent Multimedia)
 
 #########################################################

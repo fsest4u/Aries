@@ -18,6 +18,7 @@
 
 #include "misc/SettingData.h"
 #include "cio.h"
+#include "SDL.h"
 
 static const QString SETTINGS_GROUP = "mainWindow";
 
