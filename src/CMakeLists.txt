@@ -306,6 +306,7 @@ set( SDL2_INCLUDE_FILES
 
 set( SDL2_LIB_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/SDL207/lib/SDL2.lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/SDL207/lib/SDL2main.lib
 )
 
 #########################################################

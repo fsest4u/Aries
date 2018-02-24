@@ -314,6 +314,22 @@ void MainWindow::on_actionFirst_triggered()
 void MainWindow::on_actionSecond_triggered()
 {
 	qDebug() << "on_actionSecond_triggered()";
+	// select directory
+	if (!QFileInfo(m_LastFolderOpen).exists()) {
+		m_LastFolderOpen = QDir::homePath();
+	}
+
+	QString default_filter = "*";
+	QString filename = QFileDialog::getOpenFileName(this, tr("Open Video File"), m_LastFolderOpen, VIDEO_EXTENSION);
+	if (filename.isEmpty()) {
+		QMessageBox::warning(this, tr("Open Video File"), tr("Please select a video file to open."));
+		return;
+	}
+
+	if (!filename.isEmpty()) {
+		m_LastFolderOpen = QFileInfo(filename).absolutePath();
+		m_Second.OpenFile(filename);
+	}
 
 }
 

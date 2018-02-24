@@ -29,6 +29,7 @@ class QTutorialSecond
       QTutorialSecond();
       virtual ~QTutorialSecond();
 
+	  bool OpenFile(QString filename);
 
 };
 

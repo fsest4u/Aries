@@ -14,6 +14,7 @@
 
 #include "ffmpegQT341/QVideoDecoder.h"
 #include "ffmpegQT341/QTutorialFirst.h"
+#include "ffmpegQT341/QTutorialSecond.h"
 
 namespace Ui {
 class MainWindow;
@@ -65,11 +66,12 @@ private:
 	bool checkVideoLoadOk();
 	void nextFrame();
 
-	QVideoDecoder m_Decoder;
+	QVideoDecoder		m_Decoder;
 
 	QTutorialFirst		m_First;
+	QTutorialSecond		m_Second;
 
-	QString		m_LastFolderOpen;
+	QString				m_LastFolderOpen;
 
     Ui::MainWindow *ui;
 };

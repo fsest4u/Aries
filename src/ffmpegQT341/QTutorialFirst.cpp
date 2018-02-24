@@ -163,6 +163,7 @@ bool QTutorialFirst::OpenFile(QString filename)
 	// Close the video file
 	avformat_close_input(&pFormatCtx);
 
+	return true;
 }
 
 void QTutorialFirst::SaveFrame(AVFrame *pFrame, int width, int height, int iFrame) {

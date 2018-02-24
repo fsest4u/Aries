@@ -36,10 +36,11 @@ extern "C" {
 
 // QTutorialFirst
 #include <libavcodec/avcodec.h>
-//#include <libavformat/avformat.h>
 #include <libswscale/swscale.h>
-//#include <stdio.h>
 
+// QTutorialSecond
+#include <SDL.h>
+#include <SDL_thread.h>
 
 }
 //}
