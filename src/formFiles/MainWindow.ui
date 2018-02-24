@@ -163,7 +163,21 @@
     <addaction name="actionOpen"/>
     <addaction name="actionExit"/>
    </widget>
+   <widget class="QMenu" name="menuTutorial">
+    <property name="title">
+     <string>Tutorial</string>
+    </property>
+    <addaction name="actionFirst"/>
+    <addaction name="actionSecond"/>
+    <addaction name="actionThird"/>
+    <addaction name="actionFourth"/>
+    <addaction name="actionFifth"/>
+    <addaction name="actionSixth"/>
+    <addaction name="actionSeventh"/>
+    <addaction name="actionEighth"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuTutorial"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="toolBar">
@@ -185,6 +199,46 @@
   <action name="actionOpen">
    <property name="text">
     <string>open</string>
+   </property>
+  </action>
+  <action name="actionFirst">
+   <property name="text">
+    <string>First</string>
+   </property>
+  </action>
+  <action name="actionSecond">
+   <property name="text">
+    <string>Second</string>
+   </property>
+  </action>
+  <action name="actionThird">
+   <property name="text">
+    <string>Third</string>
+   </property>
+  </action>
+  <action name="actionFourth">
+   <property name="text">
+    <string>Fourth</string>
+   </property>
+  </action>
+  <action name="actionFifth">
+   <property name="text">
+    <string>Fifth</string>
+   </property>
+  </action>
+  <action name="actionSixth">
+   <property name="text">
+    <string>Sixth</string>
+   </property>
+  </action>
+  <action name="actionSeventh">
+   <property name="text">
+    <string>Seventh</string>
+   </property>
+  </action>
+  <action name="actionEighth">
+   <property name="text">
+    <string>Eighth</string>
    </property>
   </action>
  </widget>

@@ -8,22 +8,26 @@
 **
 *************************************************************************/
 
-#pragma once
-#ifndef SETTINGDATA_H
-#define SETTINGDATA_H
+#include "QTutorialFourth.h"
+#include <limits.h>
+#include <stdint.h>
+#include "ffmpeg.h"
 
-#include <QtCore/QSettings>
 
-class SettingData : public QSettings
+/**
+   \brief Constructor - opens a video on later openFile call
+**/
+QTutorialFourth::QTutorialFourth()
 {
-public:
-	SettingData();
-	virtual ~SettingData();
+
+}
 
 
-private:
+QTutorialFourth::~QTutorialFourth()
+{
+
+}
 
 
-};
 
-#endif // SETTINGDATA_H
+

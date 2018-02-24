@@ -8,22 +8,28 @@
 **
 *************************************************************************/
 
-#pragma once
-#ifndef SETTINGDATA_H
-#define SETTINGDATA_H
+#ifndef __QTUTORIAL_FIFTH_H
+#define __QTUTORIAL_FIFTH_H
 
-#include <QtCore/QSettings>
 
-class SettingData : public QSettings
+#include <QIODevice>
+#include <QFile>
+#include <QImage>
+
+//#include "ffmpeg.h"
+
+class QTutorialFifth
 {
-public:
-	SettingData();
-	virtual ~SettingData();
+   protected:
 
 
-private:
+
+   public:
+      // Public interface
+      QTutorialFifth();
+      virtual ~QTutorialFifth();
 
 
 };
 
-#endif // SETTINGDATA_H
+#endif // __QTUTORIAL_FIFTH_H

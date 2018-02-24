@@ -1,6 +1,6 @@
 /************************************************************************
 **
-**  Copyright (C) 2018  spdevapp <spdevapp@joara.com>
+**  Copyright (C) 2018  fsest4u <fsest4u@gmail.com>
 **
 **  This file is part of Aries.
 **
@@ -13,6 +13,7 @@
 #include <QMainWindow>
 
 #include "ffmpegQT341/QVideoDecoder.h"
+#include "ffmpegQT341/QTutorialFirst.h"
 
 namespace Ui {
 class MainWindow;
@@ -33,6 +34,15 @@ private slots:
 	void on_pushButtonNextFrame_clicked();
 	void on_pushButtonSeekMillisecond_clicked();
 	void on_pushButtonSeekFrame_clicked();
+
+	void on_actionFirst_triggered();
+	void on_actionSecond_triggered();
+	void on_actionThird_triggered();
+	void on_actionFourth_triggered();
+	void on_actionFifth_triggered();
+	void on_actionSixth_triggered();
+	void on_actionSeventh_triggered();
+	void on_actionEighth_triggered();
 
 private:
 
@@ -56,6 +66,8 @@ private:
 	void nextFrame();
 
 	QVideoDecoder m_Decoder;
+
+	QTutorialFirst		m_First;
 
 	QString		m_LastFolderOpen;
 

@@ -8,22 +8,26 @@
 **
 *************************************************************************/
 
-#pragma once
-#ifndef SETTINGDATA_H
-#define SETTINGDATA_H
+#include "QTutorialThird.h"
+#include <limits.h>
+#include <stdint.h>
+#include "ffmpeg.h"
 
-#include <QtCore/QSettings>
 
-class SettingData : public QSettings
+/**
+   \brief Constructor - 
+**/
+QTutorialThird::QTutorialThird()
 {
-public:
-	SettingData();
-	virtual ~SettingData();
+
+}
 
 
-private:
+QTutorialThird::~QTutorialThird()
+{
+
+}
 
 
-};
 
-#endif // SETTINGDATA_H
+

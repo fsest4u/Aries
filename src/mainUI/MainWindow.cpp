@@ -1,6 +1,6 @@
 /************************************************************************
 **
-**  Copyright (C) 2018  spdevapp <spdevapp@joara.com>
+**  Copyright (C) 2018  fsest4u <fsest4u@gmail.com>
 **
 **  This file is part of Aries.
 **
@@ -287,4 +287,68 @@ void MainWindow::on_actionExit_triggered()
 		this->close();
 		return;
 	}
+}
+
+void MainWindow::on_actionFirst_triggered()
+{
+	qDebug() << "on_actionFirst_triggered()";
+	// select directory
+	if (!QFileInfo(m_LastFolderOpen).exists()) {
+		m_LastFolderOpen = QDir::homePath();
+	}
+
+	QString default_filter = "*";
+	QString filename = QFileDialog::getOpenFileName(this, tr("Open Video File"), m_LastFolderOpen, VIDEO_EXTENSION);
+	if (filename.isEmpty()) {
+		QMessageBox::warning(this, tr("Open Video File"), tr("Please select a video file to open."));
+		return;
+	}
+
+	if (!filename.isEmpty()) {
+		m_LastFolderOpen = QFileInfo(filename).absolutePath();
+		m_First.OpenFile(filename);
+	}
+
+}
+
+void MainWindow::on_actionSecond_triggered()
+{
+	qDebug() << "on_actionSecond_triggered()";
+
+}
+
+void MainWindow::on_actionThird_triggered()
+{
+	qDebug() << "on_actionThird_triggered()";
+
+}
+
+void MainWindow::on_actionFourth_triggered()
+{
+	qDebug() << "on_actionFourth_triggered()";
+
+}
+
+void MainWindow::on_actionFifth_triggered()
+{
+	qDebug() << "on_actionFifth_triggered()";
+
+}
+
+void MainWindow::on_actionSixth_triggered()
+{
+	qDebug() << "on_actionSixth_triggered()";
+
+}
+
+void MainWindow::on_actionSeventh_triggered()
+{
+	qDebug() << "on_actionSeventh_triggered()";
+
+}
+
+void MainWindow::on_actionEighth_triggered()
+{
+	qDebug() << "on_actionEighth_triggered()";
+
 }

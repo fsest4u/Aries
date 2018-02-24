@@ -172,6 +172,22 @@ set( FFMPEGQT_FILES
     ffmpegQT341/ffmpeg.h
     ffmpegQT341/QVideoDecoder.h
     ffmpegQT341/QVideoDecoder.cpp
+    ffmpegQT341/QTutorialFirst.h
+    ffmpegQT341/QTutorialFirst.cpp
+    ffmpegQT341/QTutorialSecond.h
+    ffmpegQT341/QTutorialSecond.cpp
+    ffmpegQT341/QTutorialThird.h
+    ffmpegQT341/QTutorialThird.cpp
+    ffmpegQT341/QTutorialFourth.h
+    ffmpegQT341/QTutorialFourth.cpp
+    ffmpegQT341/QTutorialFifth.h
+    ffmpegQT341/QTutorialFifth.cpp
+    ffmpegQT341/QTutorialSixth.h
+    ffmpegQT341/QTutorialSixth.cpp
+    ffmpegQT341/QTutorialSeventh.h
+    ffmpegQT341/QTutorialSeventh.cpp
+    ffmpegQT341/QTutorialEighth.h
+    ffmpegQT341/QTutorialEighth.cpp
 )
 
 set( SDL2_FILES
